@@ -10,9 +10,8 @@ void selection_sort(int *array, size_t size)
 {
 int min, tmp;
 size_t i, j = 0, index_min;
-if (!array || size <= 0)
+if (!array || size < 2)
 return;
-else
 for (j = 0; j < size; j++)
 {
 min = array[j];
