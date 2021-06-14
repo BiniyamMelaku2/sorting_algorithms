@@ -7,25 +7,20 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-int curr, next, flag = 1;
-size_t i = 0;
-while (flag)
+int max;
+size_t i, j;
+
+for (i = size; i > 1; i--)
 {
-for (i = 0; i < size - 1; i++)
+for (j = 0; j < i - 1; j++)
 {
-curr = array[i];
-next = array[i + 1];
-if (curr > next)
+if (array[j] > array[j + 1])
 {
-array[i] = next;
-array[i + 1] = curr;
-flag = 0;
+max = array[j];
+array[j] = array[j + 1];
+array[j + 1] = max;
 print_array(array, size);
 }
 }
-if (!flag)
-flag = 1;
-else
-flag = 0;
 }
 }
