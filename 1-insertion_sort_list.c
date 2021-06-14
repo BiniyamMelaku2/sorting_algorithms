@@ -2,29 +2,19 @@
 
 /**
  * Swap - swaps two doubly linked list nodes
- * @head: pointer to head of linked list
  * @A: the first node
  * @B: the second node
  */
-void Swap(listint_t *A, listint_t *B, listint_t **head)
+void Swap(listint_t *A, listint_t *B)
 {
-listint_t *tmp1 = NULL, *tmp2 = NULL;
-if (A == NULL || B == NULL)
-return;
-tmp1 = A->prev;
-tmp2 = B->next;
-
-if (tmp1)
-tmp1->next = B;
-if (tmp2)
-tmp2->prev = A;
-
-A->next = tmp2;
+if (A->prev != NULL)
+A->prev->next = B;
+if (B->next != NULL)
+B->next->prev = A;
+A->next = B->next;
+B->prev = A->prev;
 A->prev = B;
 B->next = A;
-B->prev = tmp1;
-if (tmp1 == NULL)
-*head = B;
 }
 
 /**
@@ -34,19 +24,32 @@ if (tmp1 == NULL)
  */
 void insertion_sort_list(listint_t **list)
 {
-listint_t *curr = *list, *next = *list;
+listint_t *curr = NULL, *prev = NULL, *head;
 if (list == NULL || (*list)->next == NULL || (*list) == NULL)
 return;
+head = *list;
+while (head->next != NULL)
+{
+if (head->n > head->next->n)
+{
+curr = head->next;
+Swap(head, head->next);
+if (curr->prev == NULL)
+*list = curr;
+print_list((const listint_t *)*list);
 
-while (next)
+while (curr->prev != NULL)
 {
-curr = next->prev;
-while (curr && (curr->n > next->n))
-{
-Swap(curr, next, list);
-print_list(*list);
-curr = next->prev;
+if (curr->n >= curr->prev->n)
+break;
+prev = curr->prev;
+Swap(prev, curr);
+if (curr->prev == NULL)
+*list = curr;
+print_list((const listint_t *)*list);
 }
-next = next->next;
+}
+else
+head = head->next;
 }
 }
