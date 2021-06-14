@@ -1,40 +1,39 @@
 #include "sort.h"
 
 /**
- * Swap - swaps two int values
- * @A: first number
- * @B: second number
- */
-void Swap(int *A, int *B)
-{
-int tmp;
-tmp = *A;
-*A = *B;
-*B = tmp;
-}
-
-/**
  * partition - partitions the array
  * @array: an array of integers
  * @low: lower end array index
  * @high: higher end array index
+ * @size: max index size of the array
  * Return: index for the pivot
  */
 int partition(int *array, int low, int high, size_t size)
 {
 int pivot = array[high];
-int l = low - 1, h;
-for (h = low; h <= high; h++)
+int l = low - 1, h, tmp;
+for (h = low; h < high; h++)
 {
 if (array[h] <= pivot)
 {
 l++;
-if (l != h)
-{
-Swap(&array[l], &array[h]);
+if (l == h)
+continue;
+tmp = array[l];
+array[l] = array[h];
+array[h] = tmp;
 print_array(array, size);
 }
 }
+if (array[high] <= array[l + 1])
+{
+l++;
+if (l == high)
+return (l);
+tmp = array[l];
+array[l] = array[high];
+array[high] = tmp;
+print_array(array, size);
 }
 return (l);
 }
