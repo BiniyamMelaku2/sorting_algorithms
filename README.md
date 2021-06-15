@@ -137,6 +137,63 @@ No big O notations of the time complexity of the Shell sort (Knuth sequence) alg
 ```
   > gcc -Wall -Wextra -Werror -pedantic 103-main.c 103-merge_sort.c print_array.c -o merge | ./merge 
  
+## 8. Heap sort  [  ]
+  Write a function that sorts an array of integers in ascending order using the [Heap sort](https://en.wikipedia.org/wiki/Heapsort) algorithm
+  * Prototype: [ void heap_sort(int *array, size_t size); ]
+  * You must implement the sift-down heap sort algorithm
+  * You’re expected to print the array after each time you swap two elements (See example below)
+  * Write in the file 104-O, the big O notations of the time complexity of the Heap sort algorithm, with 1 notation per line:
+```
+   - in the best case
+   - in the average case
+   - in the worst case
+```
+  > gcc -Wall -Wextra -Werror -pedantic 104-main.c 104-heap_sort.c print_array.c -o heap | ./heap
+
+## 9. Radix sort  [ 105-radix_sort.c ]
+  Write a function that sorts an array of integers in ascending order using the [Radix sort](https://en.wikipedia.org/wiki/Radix_sort) algorithm
+  * Prototype: [ void radix_sort(int *array, size_t size); ]
+  * You must implement the LSD radix sort algorithm
+  * You can assume that array will contain only numbers >= 0
+  * You are allowed to use malloc and free for this task
+  * You’re expected to print the array each time you increase your significant digit
+```
+   - in the best case
+   - in the average case
+   - in the worst case
+```
+  > gcc -Wall -Wextra -Werror -pedantic 105-main.c 105-radix_sort.c print_array.c -o radix | ./radix
+
+## 10. Bitonic sort [  106-bitonic_sort.c, 106-O ]
+  Write a function that sorts an array of integers in ascending order using the [Bitonic sort](https://en.wikipedia.org/wiki/Bitonic_sorter) algorithm
+  * Prototype: [ void bitonic_sort(int *array, size_t size); ]
+  * You can assume that size will be equal to 2^k, where k >= 0 (when array is not NULL …)
+  * You are allowed to use printf
+  * You’re expected to print the array each time you swap two elements (See example below)
+  * Write in the file 106-O, the big O notations of the time complexity of the Bitonic sort algorithm, with 1 notation per line:
+```
+   - in the best case
+   - in the average case
+   - in the worst case
+```
+  > gcc -Wall -Wextra -Werror -pedantic 106-main.c 106-bitonic_sort.c print_array.c -o bitonic | ./bitonic 
+
+
+## 11. Quick Sort - Hoare Partition scheme  [ 107-quick_sort_hoare.c, 107-O ]
+  Write a function that sorts an array of integers in ascending order using the [Quick sort](https://en.wikipedia.org/wiki/Quicksort) algorithm
+  * Prototype: [ void quick_sort_hoare(int *array, size_t size); ]
+  * You must implement the Hoare partition scheme.
+  * The pivot should always be the last element of the partition being sorted.
+  * You’re expected to print the array after each time you swap two elements (See example below)
+  * Write in the file 107-O, the big O notations of the time complexity of the Quick sort algorithm, with 1 notation per line:
+```
+   - in the best case
+   - in the average case
+   - in the worst case
+```
+  > gcc -Wall -Wextra -Werror -pedantic 107-main.c 107-quick_sort_hoare.c print_array.c -o quick | ./quick
+ 
+ 
 ## Resources
 ### Read or watch:
 
