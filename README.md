@@ -137,7 +137,7 @@ No big O notations of the time complexity of the Shell sort (Knuth sequence) alg
 ```
   > gcc -Wall -Wextra -Werror -pedantic 103-main.c 103-merge_sort.c print_array.c -o merge | ./merge 
  
-## 8. Heap sort  [  ]
+## 8. Heap sort  [ 104-heap_sort.c, 104-O ]
   Write a function that sorts an array of integers in ascending order using the [Heap sort](https://en.wikipedia.org/wiki/Heapsort) algorithm
   * Prototype: [ void heap_sort(int *array, size_t size); ]
   * You must implement the sift-down heap sort algorithm
