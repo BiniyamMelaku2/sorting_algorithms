@@ -137,7 +137,7 @@ No big O notations of the time complexity of the Shell sort (Knuth sequence) alg
 ```
   > gcc -Wall -Wextra -Werror -pedantic 103-main.c 103-merge_sort.c print_array.c -o merge | ./merge 
  
-## 8. Heap sort  [ 104-heap_sort.c, 104-O ]
+## 8. Heap sort  [  ]
   Write a function that sorts an array of integers in ascending order using the [Heap sort](https://en.wikipedia.org/wiki/Heapsort) algorithm
   * Prototype: [ void heap_sort(int *array, size_t size); ]
   * You must implement the sift-down heap sort algorithm
@@ -192,7 +192,18 @@ No big O notations of the time complexity of the Shell sort (Knuth sequence) alg
    - in the worst case
 ```
   > gcc -Wall -Wextra -Werror -pedantic 107-main.c 107-quick_sort_hoare.c print_array.c -o quick | ./quick
- 
+
+##  12. Dealer [ 1000-sort_deck.c, deck.h ]
+  Write a function that sorts a deck of cards.
+  * Prototype: [ void sort_deck(deck_node_t **deck); ]
+  * You are allowed to use the C standard library function qsort
+  * Each node of the doubly linked list contains a card that you cannot modify. You have to swap the nodes.
+  * You can assume there is exactly 52 elements in the doubly linked list.
+  * You are free to use the sorting algorithm of your choice
+  + The deck must be ordered:
+   + From Ace to King
+   + From Spades to Diamonds
+  > gcc -Wall -Wextra -Werror -pedantic 1000-main.c 1000-sort_deck.c -o deck | ./deck
  
 ## Resources
 ### Read or watch:
